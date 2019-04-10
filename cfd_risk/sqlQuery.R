@@ -1,6 +1,6 @@
 sqlQuery <- function(leftb, rightb, config, asset) {
   con <- dbConnect(PostgreSQL(), user=config$login, password=config$password,
-                   dbname="binomo_db", host="172.31.0.32", port="5433")
+                   dbname="binomo_db", host=" ", port=" ")
   
   query <- paste0("select dls.user_id, assets.name as asset, dls.trend, dls.opened_at, dls.closed_at, dls.bet_usd,", 
                   "crn.rate*dls.commission as commission, dls.revenue_usd, dls.leverage, dls.device_type from cfd_deals as dls ",
